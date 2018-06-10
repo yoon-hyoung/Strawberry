@@ -7,12 +7,16 @@
 
 char *texterase;
 char *text;
+char *email;
+int IDsize = 0;
 int textsize = 0;
 int main()
 {
     char *input; //save the sentence to show
+    char *emailID
     char c; //get character
     int inputsize = 0, pos = 0; //count input size
+    int emailsize = 0;
     int i;
     int min, sec;
     //void myalarm(int signum); //sighandler
@@ -37,6 +41,23 @@ int main()
     texterase = malloc(pos);
     for(i = 0; i < pos; i++)
         texterase[i] = ' ';
+    
+    /*get email address*/
+    pos = 0;
+    printf("Input your email >>");
+    while(( c=getc(stdin) )!= '\n') {
+        if(pos+1 >= emailsize) {
+            if(emailsize == 0)
+                emailID = malloc(BUF);
+            else
+                emailID = realloc(input, inputsize + BUF);
+            emailsize += BUF; //expands inputsize
+        }
+        input[pos++] = c;
+    }
+    IDsize = pos;
+    email = malloc(pos);
+    strncpy(email, emailID, pos);
     
     /*get time*/
     printf("Input time (minute second)>>");
