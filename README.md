@@ -15,7 +15,7 @@ Fork and make pull requests!
 + you can see alarming with sound
 
 
-## Bulding
+## Building
 Read the developer handbook for a complete build walkthrough and a list of dependencies.
 
 ## Getting sources
