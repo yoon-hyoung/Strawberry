@@ -27,7 +27,7 @@ If using git to download repo of entire code history, type:
 ## Release Build
 To compile Strawberry, type:
 
-`cc strawberry.c -o strawberry`
+`cc strawberry.c -lcurses -pthread -o strawberry`
 
 If something goes wrong, then remove the whole build subdirectory with make clean and start new with make release.
 
